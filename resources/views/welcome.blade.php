@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Links -->
-    <link rel="icon" type="image/png" href="{{ asset("Styles/images/favicon.png") }}" />
+    <link rel="icon" type="image/png" href="{{ asset("Styles/images/ask.png") }}" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("Styles/icofont.min.css") }}">
     <link href="{{ asset("Styles/css/bootstrap.min.css") }}" rel="stylesheet" />
@@ -14,7 +14,8 @@
     <link href="{{ asset("Styles/css/main.css") }}" rel="stylesheet" />
     <title>Ask Clone</title>
 </head>
-<body style="background-image: url('https://d3r6ceqp4shltl.cloudfront.net/assets/welcome-bg-b04b2f80370e9f65dc06c519de25f231b09f75f9410ed6dfe989b66109c7a453.jpg');">
+<body style="background-image: url('https://d3r6ceqp4shltl.cloudfront.net/assets/welcome-bg-b04b2f80370e9f65dc06c519de25f231b09f75f9410ed6dfe989b66109c7a453.jpg');
+background-size:cover ; background-position: center center ;min-height: 680px;">
     <div class="container-fluid hero">
         <img src="" alt="">
         <div class="container">
