@@ -28,9 +28,14 @@
                 <p class="login-box-msg"><h3>login</h3></br>Dont have an account yet?
                     <a href="{{ route('user.showsignup') }}">signup</a></p>
 
-                <form action="../../index3.html" method="post">
+                <form id="" action="{{ route('user.login') }}" method="post">
+                    @csrf
                   <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email"
+                    value="{{ old('email') }}" required autofocus>
+                    @if ($errors->has('email'))
+                        <span class="text-danger"><strong>{{ $errors->first('email') }}</strong></span>
+                    @endif
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
@@ -38,7 +43,7 @@
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-lock"></span>
@@ -48,8 +53,8 @@
                   <div class="row">
                     <div class="col-8">
                       <div class="icheck-primary">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="rememberme">
+                        <label for="rememberme">
                           Remember Me
                         </label>
                       </div>
