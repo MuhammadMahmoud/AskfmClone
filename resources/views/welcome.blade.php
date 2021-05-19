@@ -25,9 +25,9 @@ background-size:cover ; background-position: center center ;min-height: 680px;">
           <p>Curious? Just ask!<br> Openly or anonymously.</p>
           <div class="hero-btns">
             <!-- Hero Btn First -->
-            <a data-scroll href="#about-us" >Sign up</a>
+            <a data-scroll href="{{ route('user.showsignup') }}" >Sign up</a>
             <!-- Hero Btn Second -->
-            <a data-scroll href="#contact-us">Log in</a>
+            <a data-scroll href="{{ route('user.showlogin') }}">Log in</a>
           </div>
         </div>
       </div>

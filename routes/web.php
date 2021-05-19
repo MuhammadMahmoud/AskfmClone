@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login','WelcomeController@showlogin')->name('user.showlogin');
+Route::post('/login','WelcomeController@login')->name('user.login');
+Route::get('/signup','WelcomeController@showsignup')->name('user.showsignup');
+Route::post('/signup','WelcomeController@signup')->name('user.signup');
+Route::get('/forgot-password','WelcomeController@forgot_password')->name('user.forgotpassword');
+
