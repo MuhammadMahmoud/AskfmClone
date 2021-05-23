@@ -17,6 +17,11 @@ class WelcomeController extends Controller{
     //     $this->middleware('auth');
     // }
 
+    public function welcome()
+    {
+        # code...
+        return view('welcome');
+    }
     public function showlogin()
     {
         # code...
@@ -64,8 +69,12 @@ class WelcomeController extends Controller{
     {
         # code...
     }
-    public function forgot_password()
+    public function show_forgot_password()
     {
         return view('forgot_password');
+    }
+    public function forgot_password()
+    {
+
     }
 }
