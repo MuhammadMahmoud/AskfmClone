@@ -9,7 +9,7 @@ use DB;
 use Auth;
 use Route;
 use Session;
-
+use Hash;
 class WelcomeController extends Controller{
 
     // public function __construct()
@@ -51,7 +51,6 @@ class WelcomeController extends Controller{
         echo $data->password . "</br>";
         if (Auth::guard('users')->attempt(['email' => $request->email, 'password' => $request->password],$request->remember)) {
             // if successful, then redirect to their intended location
-            return "Success";
             return redirect()->intended(route('user.homepage'));
         }
         if($data->email == $request->email && $data->password == $request->password){
@@ -65,9 +64,29 @@ class WelcomeController extends Controller{
     {
         return view('signup');
     }
-    public function signup()
+    public function signup(Request $request)
     {
-        # code...
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+        ]);
+        $data = $request->all();
+        $check = $this->create($data);
+          if($check){
+            return redirect()->intended(route('user.showlogin'));
+          }
+          else{
+            return redirect()->back()->withInput($request->only('email', 'name'));
+          }
+    }
+    public function create(array $data)
+    {
+      return User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password'])
+      ]);
     }
     public function show_forgot_password()
     {

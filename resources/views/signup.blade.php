@@ -19,7 +19,7 @@
     <div class="container">
         <div class="register-box" style="margin-left: 385px">
             <div class="register-logo">
-              <a href="../../index2.html" style="color: #EE1144">Askfm Clone</a>
+              <a href="{{ route('user.welcome') }}" style="color: #EE1144">Askfm Clone</a>
             </div>
 
             <div class="card">
@@ -27,9 +27,14 @@
                 <p class="login-box-msg"><h3>Sign up</h3></br>have an account already?
                     <a href="{{ route('user.showlogin') }}">login</a></p>
 
-                <form action="../../index.html" method="post">
+                <form action="{{ route('user.signup') }}" method="post">
+                    @csrf
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Full name">
+                    <input type="text" class="form-control" name="name" placeholder="Full Name"
+                    value="{{ old('name') }}" required >
+                    @if ($errors->has('name'))
+                                      <span class="text-danger">{{ $errors->first('name') }}</span>
+                    @endif
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-user"></span>
@@ -37,7 +42,11 @@
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email"
+                    value="{{ old('email') }}" required autofocus>
+                    @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                    @endif
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-envelope"></span>
@@ -45,7 +54,11 @@
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password"
+                    value="{{ old('password') }}" required >
+                    @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                    @endif
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-lock"></span>
@@ -53,7 +66,11 @@
                     </div>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Retype password">
+                    <input type="password" class="form-control" placeholder="Retype password"
+                    value="{{ old('password') }}" required>
+                    @if ($errors->has('password'))
+                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                    @endif
                     <div class="input-group-append">
                       <div class="input-group-text">
                         <span class="fas fa-lock"></span>
