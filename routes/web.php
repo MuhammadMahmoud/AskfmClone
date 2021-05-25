@@ -18,12 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','WelcomeController@welcome')->name('user.welcome');
 
 //Auth::routes();
-Route::get('/login','WelcomeController@showlogin')->name('user.showlogin');
+Route::get('/login','WelcomeController@show_login')->name('user.showlogin');
 Route::post('/login','WelcomeController@login')->name('user.login');
-Route::get('/signup','WelcomeController@showsignup')->name('user.showsignup');
+Route::get('/signup','WelcomeController@show_signup')->name('user.showsignup');
 Route::post('/signup','WelcomeController@signup')->name('user.signup');
 Route::get('/forgot-password','WelcomeController@show_forgot_password')->name('user.showforgotpassword');
 Route::post('/forgot-password','WelcomeController@forgot_password')->name('user.forgotpassword');
-Route::get('/homepage','WelcomeController@showhome')->name('user.homepage');
+Route::get('/homepage','WelcomeController@show_home')->name('user.homepage');
+Route::get('/questions','WelcomeController@show_questions')->name('user.questions');
+Route::get('/profile','WelcomeController@show_profile')->name('user.profile');
+Route::get('/friends','WelcomeController@show_friends')->name('user.friends');
+Route::get('/settings','WelcomeController@show_settings')->name('user.settings');
+Route::get('/notification','WelcomeController@show_notification')->name('user.notification');
+Route::get('/logout','WelcomeController@logout')->name('user.logout');
+
+
 
 
