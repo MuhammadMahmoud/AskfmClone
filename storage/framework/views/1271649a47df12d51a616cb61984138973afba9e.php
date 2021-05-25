@@ -20,7 +20,7 @@
     <div class="container">
         <div class="login-box" style="margin-left: 385px">
             <div class="login-logo">
-              <a href="../../index2.html" style="color: #EE1144">Askfm Clone</a>
+              <a href="<?php echo e(route('user.welcome')); ?>" style="color: #EE1144">Askfm Clone</a>
             </div>
             <!-- /.login-logo -->
             <div class="card">

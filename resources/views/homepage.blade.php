@@ -33,7 +33,7 @@
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Index</a></li>
+            <li><a href="#">Questions</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Friends</a></li>
             <li><a href="#">Notification</a></li>
