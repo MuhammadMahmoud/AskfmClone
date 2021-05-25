@@ -32,16 +32,16 @@
             <a class="navbar-brand" href="#">Askfm Clone</a>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Questions</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Friends</a></li>
-            <li><a href="#">Notification</a></li>
+            <li class="active"><a href="{{ route('user.homepage') }}">Home</a></li>
+            <li><a href="{{ route('user.questions') }}">Questions</a></li>
+            <li><a href="{{ route('user.profile') }}">Profile</a></li>
+            <li><a href="{{ route('user.friends') }}">Friends</a></li>
+            <li><a href="{{ route('user.notification') }}">Notification</a></li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
                  href="#">Settings <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="{{ route('user.settings') }}">Settings</a></li>
+                    <li><a href="{{ route('user.logout') }}">Logout</a></li>
                   </ul>
             </li>
           </ul>

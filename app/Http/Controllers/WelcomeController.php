@@ -22,12 +22,12 @@ class WelcomeController extends Controller{
         # code...
         return view('welcome');
     }
-    public function showlogin()
+    public function show_login()
     {
         # code...
         return view('login');
     }
-    public function showhome()
+    public function show_home()
     {
         return view('homepage');
     }
@@ -60,7 +60,7 @@ class WelcomeController extends Controller{
         // if unsuccessful, then redirect back to the login with the form data
         return redirect()->back()->withInput($request->only('email', 'remember'));
     }
-    public function showsignup()
+    public function show_signup()
     {
         return view('signup');
     }
@@ -95,5 +95,25 @@ class WelcomeController extends Controller{
     public function forgot_password()
     {
 
+    }
+    public function show_questions()
+    {
+        # code...
+    }
+    public function show_profile()
+    {
+        # code...
+    }
+    public function show_settings()
+    {
+        # code...
+    }
+    public function show_friends()
+    {
+        # code...
+    }
+    public function logout()
+    {
+        # code...
     }
 }
