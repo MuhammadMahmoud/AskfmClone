@@ -98,7 +98,7 @@ class WelcomeController extends Controller{
     }
     public function show_questions()
     {
-
+        return view('questions');
     }
     public function show_profile()
     {
@@ -115,5 +115,9 @@ class WelcomeController extends Controller{
     public function logout()
     {
         # code...
+    }
+    public function show_notification()
+    {
+        return view('notification');
     }
 }
