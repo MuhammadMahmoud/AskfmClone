@@ -98,11 +98,11 @@ class WelcomeController extends Controller{
     }
     public function show_questions()
     {
-        # code...
+
     }
     public function show_profile()
     {
-        # code...
+        return view('profile');
     }
     public function show_settings()
     {
@@ -110,7 +110,7 @@ class WelcomeController extends Controller{
     }
     public function show_friends()
     {
-        # code...
+        return view('friends');
     }
     public function logout()
     {
