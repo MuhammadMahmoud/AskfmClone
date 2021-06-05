@@ -106,7 +106,7 @@ class WelcomeController extends Controller{
     }
     public function show_settings()
     {
-        # code...
+        return view('settings');
     }
     public function show_friends()
     {
